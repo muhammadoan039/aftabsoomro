@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Official literary profile of Aftab Ahmed Soomro — writer, researcher and literary practitioner.">
+<title>Aftab Ahmed Soomro | Writer • Researcher • Literary Practitioner</title>
+
+<style>
+:root{
+  --ink:#1f2933;
+  --muted:#64748b;
+  --paper:#fbf8f1;
+  --cream:#f3ead9;
+  --gold:#a8782d;
+  --gold-dark:#80591f;
+  --white:#ffffff;
+  --line:#e5dccb;
+  --dark:#18212b;
+  --shadow:0 14px 40px rgba(38,31,20,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.7;
+}
+a{color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(251,248,241,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:25px;
+}
+.logo{
+  text-decoration:none;font-size:1.25rem;font-weight:bold;letter-spacing:.3px;
+}
+.logo span{display:block;color:var(--gold);font-size:.72rem;letter-spacing:2px;text-transform:uppercase}
+nav ul{display:flex;list-style:none;gap:22px;align-items:center}
+nav a{text-decoration:none;font-family:Arial,sans-serif;font-size:.88rem;font-weight:600;color:#34404b}
+nav a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer;color:var(--ink)}
+
+.hero{
+  min-height:calc(100vh - 74px);
+  display:flex;align-items:center;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(168,120,45,.12),transparent 30%),
+    linear-gradient(135deg,#fbf8f1 0%,#f1e6d1 100%);
+}
+.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:70px;align-items:center}
+.kicker{
+  color:var(--gold-dark);text-transform:uppercase;letter-spacing:3px;
+  font:700 .78rem Arial,sans-serif;margin-bottom:18px;
+}
+h1{font-size:clamp(3rem,7vw,6.2rem);line-height:.98;margin-bottom:22px;color:var(--dark)}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:1.35rem;color:#4c5964;margin-bottom:25px}
+.hero-text{max-width:700px;font-size:1.05rem;color:#53606b}
+.hero-buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn{
+  display:inline-block;padding:12px 20px;border-radius:4px;text-decoration:none;
+  font:700 .88rem Arial,sans-serif;border:1px solid var(--gold);
+}
+.btn.primary{background:var(--gold);color:#fff}
+.btn.secondary{color:var(--gold-dark);background:transparent}
+.btn:hover{transform:translateY(-2px)}
+
+.bookmark{
+  width:290px;height:370px;margin:auto;position:relative;
+  background:var(--dark);color:#fff;padding:35px 28px;
+  box-shadow:24px 28px 0 rgba(168,120,45,.22),var(--shadow);
+  border-radius:3px;
+}
+.bookmark:before{
+  content:"";position:absolute;left:20px;top:0;width:4px;height:100%;background:var(--gold);
+}
+.bookmark .small{font:700 .68rem Arial,sans-serif;letter-spacing:3px;color:#d6b675;text-transform:uppercase}
+.bookmark h2{font-size:2.4rem;line-height:1.05;margin:45px 0 18px}
+.bookmark p{font-style:italic;color:#d8dde1}
+.bookmark .line{height:1px;background:#66717b;margin:25px 0}
+.bookmark .author{font-weight:bold}
+
+section{padding:90px 0}
+.section-head{margin-bottom:42px;max-width:760px}
+.eyebrow{
+  font:700 .72rem Arial,sans-serif;text-transform:uppercase;letter-spacing:2.5px;color:var(--gold-dark);
+  margin-bottom:9px;
+}
+h2.section-title{font-size:clamp(2rem,4vw,3.1rem);line-height:1.1;color:var(--dark);margin-bottom:13px}
+.section-head p{color:var(--muted);font-size:1.03rem}
+.alt{background:#f1e8d8}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.card{
+  background:var(--white);border:1px solid var(--line);padding:27px;
+  box-shadow:var(--shadow);border-radius:5px;
+}
+.card h3{font-size:1.35rem;margin-bottom:14px;color:var(--dark)}
+.card p{color:#596673}
+.info-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.info-item{padding:14px 0;border-bottom:1px solid var(--line)}
+.info-item strong{display:block;color:var(--dark)}
+.info-item span{color:var(--muted);font-size:.95rem}
+
+.timeline{position:relative;margin-left:10px}
+.timeline:before{content:"";position:absolute;left:8px;top:5px;bottom:5px;width:1px;background:#d4c3a7}
+.timeline-item{position:relative;padding:0 0 35px 42px}
+.timeline-item:before{
+  content:"";position:absolute;left:2px;top:8px;width:13px;height:13px;
+  border:3px solid var(--paper);background:var(--gold);border-radius:50%;box-shadow:0 0 0 1px var(--gold);
+}
+.timeline-item h3{font-size:1.3rem;color:var(--dark)}
+.timeline-item .meta{font:700 .75rem Arial,sans-serif;color:var(--gold-dark);text-transform:uppercase;letter-spacing:1px;margin:4px 0 8px}
+.timeline-item p{color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature-card{
+  padding:25px;background:var(--white);border:1px solid var(--line);
+  box-shadow:var(--shadow);border-radius:5px;
+}
+.feature-card .number{font:bold 2rem Georgia;color:#c6a66d}
+.feature-card h3{margin:7px 0 10px;color:var(--dark)}
+.feature-card p{color:var(--muted);font-size:.95rem}
+
+.pub-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.pub{
+  display:flex;gap:18px;background:#fff;border:1px solid var(--line);padding:22px;
+  box-shadow:var(--shadow);
+}
+.pub-icon{
+  flex:0 0 52px;height:68px;background:var(--dark);color:#fff;display:grid;place-items:center;
+  font-size:1.25rem;border-left:4px solid var(--gold);
+}
+.pub h3{font-size:1.12rem;margin-bottom:5px}
+.pub p{font-size:.92rem;color:var(--muted)}
+
+.award{
+  display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:center;
+  background:var(--dark);color:#fff;padding:35px;border-radius:5px;
+}
+.award-badge{
+  width:100px;height:100px;border:1px solid #c9a85f;border-radius:50%;
+  display:grid;place-items:center;text-align:center;color:#d9bc7d;font-size:.75rem;font-weight:bold;
+}
+.award p{color:#d5dbe0}
+
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{
+  padding:8px 13px;border:1px solid var(--line);background:#fff;border-radius:20px;
+  font-family:Arial,sans-serif;font-size:.84rem;color:#53606b;
+}
+
+.contact{background:var(--dark);color:#fff}
+.contact .section-title{color:#fff}
+.contact .section-head p{color:#cbd2d8}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
+.contact-card{padding:28px;border:1px solid #394651;background:#202b35}
+.contact-row{display:flex;gap:15px;padding:15px 0;border-bottom:1px solid #394651}
+.contact-row:last-child{border-bottom:0}
+.contact-row strong{min-width:95px;color:#d9bc7d}
+.contact-row a{color:#fff;text-decoration:none}
+.contact-row a:hover{color:#d9bc7d}
+.quote{font-size:1.5rem;font-style:italic;line-height:1.45;color:#eee}
+
+footer{background:#111920;color:#9da8b0;padding:25px 0;text-align:center;font:13px Arial,sans-serif}
+footer strong{color:#d8bc7d}
+
+@media(max-width:900px){
+  nav ul{gap:12px}
+  nav a{font-size:.78rem}
+  .hero-grid{grid-template-columns:1fr}
+  .hero{padding:75px 0}
+  .bookmark{margin:10px auto 0}
+  .grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .nav{min-height:65px}
+  .menu-btn{display:block}
+  nav ul{
+    display:none;position:absolute;left:4%;right:4%;top:68px;background:var(--paper);
+    border:1px solid var(--line);padding:15px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;
+  }
+  nav ul.open{display:flex}
+  nav a{display:block;padding:9px}
+  section{padding:65px 0}
+  .hero{min-height:auto;padding:70px 0}
+  h1{font-size:3.5rem}
+  .about-grid,.pub-grid,.contact-grid,.grid{grid-template-columns:1fr}
+  .info-list{grid-template-columns:1fr}
+  .award{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">Aftab Ahmed Soomro<span>Writer • Researcher</span></a>
+    <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul id="navMenu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">Writer • Researcher • Literary Practitioner</div>
+      <h1>Aftab Ahmed <span>Soomro</span></h1>
+      <p class="hero-sub">Pen Name: Aftab Soomro</p>
+      <p class="hero-text">
+        Writer, researcher and literary practitioner with a long professional career in the
+        National Book Foundation and extensive engagement with literature, research, cultural
+        programmes, publishing, book fairs and public literary activity.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn primary" href="#publications">Explore Publications</a>
+        <a class="btn secondary" href="#contact">Contact the Writer</a>
+      </div>
+    </div>
+    <div class="bookmark" aria-label="Author introduction">
+      <div class="small">Literary Profile</div>
+      <h2>Words,<br>Research &<br>Culture</h2>
+      <p>Writing and contributing to literary work in Sindhi, Urdu and English.</p>
+      <div class="line"></div>
+      <div class="author">Aftab Soomro</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">About the Writer</div>
+      <h2 class="section-title">A life devoted to books, research and literary culture.</h2>
+      <p>
+        Aftab Ahmed Soomro has worked across publishing, literature, research, cultural
+        programmes and institutional book development, while continuing his own literary work.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <div class="card">
+        <h3>Professional Profile</h3>
+        <p>
+          Writer, researcher and literary practitioner with a long professional career in the
+          National Book Foundation and substantial engagement with literature, research, cultural
+          programmes, publishing, book fairs and public literary activity. Writes and contributes
+          to literary work in Sindhi, Urdu and English, including books, stories, articles,
+          analytical reviews and research.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Personal Information</h3>
+        <div class="info-list">
+          <div class="info-item"><strong>Pen Name</strong><span>Aftab Soomro</span></div>
+          <div class="info-item"><strong>Date of Birth</strong><span>1 November 1956</span></div>
+          <div class="info-item"><strong>Nationality</strong><span>Pakistani</span></div>
+          <div class="info-item"><strong>Location</strong><span>Islamabad, Pakistan</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="education">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Education</div>
+      <h2 class="section-title">Educational Background</h2>
+    </div>
+    <div class="grid">
+      <div class="feature-card"><div class="number">01</div><h3>M.A. Sociology</h3><p>2nd Position</p></div>
+      <div class="feature-card"><div class="number">02</div><h3>M.A. English</h3><p>Master's degree in English.</p></div>
+      <div class="feature-card"><div class="number">03</div><h3>B.A.</h3><p>Political Science / Economics</p></div>
+      <div class="feature-card"><div class="number">04</div><h3>LL.B.</h3><p>Law</p></div>
+      <div class="feature-card"><div class="number">05</div><h3>Diploma</h3><p>Youth in Development Work — Commonwealth (UK)</p></div>
+      <div class="feature-card"><div class="number">06</div><h3>Intermediate & Matriculation</h3><p>Pre-Medical • Science</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Professional Experience</div>
+      <h2 class="section-title">National Book Foundation</h2>
+      <p>Secretary, BS-19 • Retired with effect from 31 October 2016.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Secretary, National Book Foundation</h3>
+        <div class="meta">BS-19 • Government of Pakistan</div>
+        <p>
+          Worked as Secretary of NBF with responsibilities covering institutional policy,
+          financial control, administration, programmes, publishing, book fairs and inter-institutional
+          activities.
+        </p>
+      </div>
+      <div class="timeline-item">
+        <h3>Institutional Responsibilities</h3>
+        <div class="meta">Leadership & Administration</div>
+        <p>
+          Policy matters and institutional decisions; financial control and supervision; overall
+          supervision of head-office wings, regional and branch offices and sales outlets;
+          planning and management of programmes and activities.
+        </p>
+      </div>
+      <div class="timeline-item">
+        <h3>Books, Projects & Partnerships</h3>
+        <div class="meta">Publishing & Development</div>
+        <p>
+          Managed production, sale and supply of books and reading materials, textbooks,
+          schemes and projects, and execution of MOUs with universities and national and
+          international organisations.
+        </p>
+      </div>
+      <div class="timeline-item">
+        <h3>Additional Institutional Duties</h3>
+        <div class="meta">NBF Focal Person</div>
+        <p>
+          Performed Managing Director duties during tours or leave and served as NBF Focal
+          Person for designated programmes and inter-institutional activities.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="publications">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Books & Literary Work</div>
+      <h2 class="section-title">Publications & Literary Work</h2>
+      <p>Selected books and research contributions in Sindhi, Urdu and English.</p>
+    </div>
+
+    <div class="pub-grid">
+      <article class="pub">
+        <div class="pub-icon">01</div>
+        <div><h3>Mazdak-je-Mulk-men</h3><p>Travelogue — Sindhi. “In the Country of Mazdak.”</p></div>
+      </article>
+      <article class="pub">
+        <div class="pub-icon">02</div>
+        <div><h3>Fir Iran Ko Chale</h3><p>Travelogue — Urdu. “Again to Iran.”</p></div>
+      </article>
+      <article class="pub">
+        <div class="pub-icon">03</div>
+        <div><h3>Beijing khan Bangkok je bazaroun taeen</h3><p>Travelogue — Sindhi. “From Beijing to the Markets.”</p></div>
+      </article>
+      <article class="pub">
+        <div class="pub-icon">04</div>
+        <div><h3>Sachal je Sindhi Shaeri — Fiqr-Parkho — hik Mutalro</h3><p>Sindhi research on Sachal Sarmast's Sindhi poetry.</p></div>
+      </article>
+      <article class="pub">
+        <div class="pub-icon">05</div>
+        <div><h3>An Introduction to the Poetic Art of Hafiz Darazi</h3><p>English-language research work.</p></div>
+      </article>
+      <article class="pub">
+        <div class="pub-icon">06</div>
+        <div><h3>Stories, Articles & Poetry</h3><p>Literary writing, analytical reviews and poetry in Sindhi, Urdu and English.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="training">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Professional Development</div>
+      <h2 class="section-title">Training, Workshops & Seminars</h2>
+    </div>
+    <div class="grid">
+      <div class="feature-card"><h3>Research & Education</h3><p>National Workshop on Research Methodology — Scope & Application; National Workshop on Standards Based Education in Pakistan.</p></div>
+      <div class="feature-card"><h3>Copyright & Intellectual Property</h3><p>Training on Copyright Law in Pakistan and recognition of pirated/counterfeit CDs/DVDs; participation in national IP strategy discussions.</p></div>
+      <div class="feature-card"><h3>Development & Planning</h3><p>Project Planning, NGO Project Planning, Staff Skill & Development Training and Gender Mainstreaming & Sensitization.</p></div>
+      <div class="feature-card"><h3>Curricula & Textbooks</h3><p>National Consultative Workshop on Curricula and Textbooks by the Sustainable Development Policy Institute.</p></div>
+      <div class="feature-card"><h3>Chinese Language Seminar</h3><p>Seminar for officials of developing countries in Beijing, Xi'an and Shanghai, China, 10 June–12 July 2008.</p></div>
+      <div class="feature-card"><h3>Management & Policy</h3><p>Stress Management Workshop and Round Table on Development of a National Intellectual Property Strategy in 2015.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="activities">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Cultural & International Work</div>
+      <h2 class="section-title">Programmes, Events & Book Fairs</h2>
+    </div>
+    <div class="grid">
+      <div class="feature-card"><div class="number">21</div><h3>Tehran International Book Fair</h3><p>NBF representation and book exhibition, Iran, 2–12 May 2008.</p></div>
+      <div class="feature-card"><div class="number">02</div><h3>Delhi World Book Fair</h3><p>NBF Book Stall and related affairs, 25 February–4 March 2012.</p></div>
+      <div class="feature-card"><div class="number">03</div><h3>Sharjah Book Fair</h3><p>NBF Book Stall and related affairs, 7–17 November 2012.</p></div>
+      <div class="feature-card"><h3>National Reading Survey</h3><p>Conducted in collaboration with Asia Pacific Cooperation Programme for Reading Promotion and Book Development (APPREB).</p></div>
+      <div class="feature-card"><h3>Literature & Copyright</h3><p>Participated in symposia on Pakistani Literature in English and Copyright and TRIPS Agreement by WIPO, Geneva.</p></div>
+      <div class="feature-card"><h3>Shehr-e-Kitab</h3><p>Established “Shehr-e-Kitab” in Islamabad, inaugurated 17 March 2016, including 28 bookshops, a Book Café and a Book Park.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Literary Engagement</div>
+      <h2 class="section-title">Cultural & Literary Engagement</h2>
+    </div>
+    <div class="card">
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>General Secretary</h3>
+          <div class="meta">Islamabadian Sindhiera Cultural and Welfare Association (ISCWA) • December 2023–Present</div>
+          <p>General Secretary, contributing to cultural and welfare activities.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Councillor</h3>
+          <div class="meta">Sindhi Adabi Sangat, Islamabad • Tenure 2024–25</div>
+          <p>Served as Councillor of the literary organisation.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Chairperson</h3>
+          <div class="meta">Progressive Thinkers Forum Balochistan, Quetta</div>
+          <p>Chairperson of the forum.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Secretary</h3>
+          <div class="meta">Sindhi Adabi Sangat, Shikarpur Chapter • 1996</div>
+          <p>Served as Secretary of the Shikarpur chapter.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="awards">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Recognition</div>
+      <h2 class="section-title">Awards & Recognition</h2>
+    </div>
+    <div class="award">
+      <div class="award-badge">BEST<br>BOOK<br>2017</div>
+      <div>
+        <h3>Best Book of the Year 2017</h3>
+        <p>
+          Award for <em>Sachal je Sindhi Shaeri – Fikir-Parkho</em> in the fields of Research,
+          Social Sciences, Literature and Anthropology, as recorded in the source CV.
+        </p>
+        <br>
+        <p><strong>Perfection and Performance Award</strong> — Monthly Magazine “Majta” (Sindhi).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Skills & Interests</div>
+      <h2 class="section-title">Languages, Technology & Interests</h2>
+    </div>
+    <div class="about-grid">
+      <div class="card">
+        <h3>Languages</h3>
+        <div class="tags">
+          <span class="tag">Sindhi — Fluent</span>
+          <span class="tag">Urdu — Fluent</span>
+          <span class="tag">English — Fluent</span>
+          <span class="tag">Siraiki — Speak & Read</span>
+          <span class="tag">Punjabi — Speak & Read</span>
+          <span class="tag">Arabic — Read</span>
+          <span class="tag">Persian — Read</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Computer Applications</h3>
+        <div class="tags">
+          <span class="tag">Microsoft Word</span>
+          <span class="tag">Word Processing</span>
+          <span class="tag">Internet Applications</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>International Travel / Representation</h3>
+        <div class="tags">
+          <span class="tag">Iran</span><span class="tag">China</span><span class="tag">Thailand</span>
+          <span class="tag">United Arab Emirates</span><span class="tag">India</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Interests</h3>
+        <div class="tags">
+          <span class="tag">Arts</span><span class="tag">Social Sciences</span><span class="tag">Literature</span>
+          <span class="tag">Philosophy</span><span class="tag">Politics</span><span class="tag">Sociology</span>
+          <span class="tag">Tourism</span><span class="tag">Folk Music</span><span class="tag">Palmistry</span><span class="tag">Numerology</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Get in Touch</div>
+      <h2 class="section-title">Contact Aftab Soomro</h2>
+      <p>For literary, research, cultural and professional correspondence.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-row"><strong>Email</strong><div><a href="mailto:aftabsomro@gmail.com">aftabsomro@gmail.com</a><br><a href="mailto:aftabsomro@yahoo.com">aftabsomro@yahoo.com</a></div></div>
+        <div class="contact-row"><strong>Phone</strong><div><a href="tel:+923322816468">+92 3322816468</a></div></div>
+        <div class="contact-row"><strong>Address</strong><div>House No. 9-A, Street No. 59,<br>Jinah Gardens, Islamabad, Pakistan</div></div>
+      </div>
+      <div class="contact-card">
+        <p class="quote">“Literature connects people, preserves memory, and keeps ideas in conversation across generations.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> <strong>Aftab Ahmed Soomro</strong> • Writer, Researcher & Literary Practitioner
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("open");
+}
+document.querySelectorAll("#navMenu a").forEach(link=>{
+  link.addEventListener("click",()=>document.getElementById("navMenu").classList.remove("open"));
+});
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
